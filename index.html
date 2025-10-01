@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Would You Rather?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <header class="header">
+          <h1 class="title">Would You Rather?</h1>
+          <p class="subtitle">HEHEHE THE GAME OF CHOICE</p>
+        </header>
+
+        <div class="controls">
+          <button class="control-btn" id="filterBtn">
+            <span class="icon">🎯</span>
+            <span>Filter: All</span>
+          </button>
+          <button class="control-btn" id="skipBtn">
+            <span class="icon">⏭️</span>
+            <span>Skip</span>
+          </button>
+          <button class="control-btn" id="shareBtn">
+            <span class="icon">🔗</span>
+            <span>Share</span>
+          </button>
+        </div>
+
+        <div class="question-card">
+          <div class="question-header">
+            <div class="question-number">Question <span id="questionCount">1</span></div>
+            <div class="category-badge" id="categoryBadge">Philosophical</div>
+          </div>
+
+          <div class="choices-container">
+            <button class="choice-btn left-choice" id="leftChoice">
+              <div class="choice-content">
+                <span class="choice-text" id="leftText">Loading...</span>
+              </div>
+              <div class="percentage-bar">
+                <div class="percentage-fill left-fill" id="leftFill"></div>
+                <span class="percentage-text" id="leftPercent"></span>
+              </div>
+            </button>
+
+            <div class="or-divider">
+              <span>OR</span>
+            </div>
+
+            <button class="choice-btn right-choice" id="rightChoice">
+              <div class="choice-content">
+                <span class="choice-text" id="rightText">Loading...</span>
+              </div>
+              <div class="percentage-bar">
+                <div class="percentage-fill right-fill" id="rightFill"></div>
+                <span class="percentage-text" id="rightPercent"></span>
+              </div>
+            </button>
+          </div>
+
+          <button class="next-btn" id="nextBtn" style="display: none;">
+            Next Question →
+          </button>
+        </div>
+
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalAnswered">0</span>
+            <span class="stat-label">Questions Answered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="currentStreak">0</span>
+            <span class="stat-label">Current Streak</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="favoriteCategory">All</span>
+            <span class="stat-label">Favorite Category</span>
+          </div>
+        </div>
+
+        <div class="history-section" id="historySection">
+          <h3 class="history-title">Your Recent Choices</h3>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Made for HackClub ~ Aarush Sharma 2025</p>
+      </footer>
+    </div>
+
+    <div class="modal" id="filterModal">
+      <div class="modal-content">
+        <h2>Filter Questions</h2>
+        <div class="filter-options">
+          <button class="filter-option active" data-filter="all">All Questions</button>
+          <button class="filter-option" data-filter="philosophical">Philosophical</button>
+          <button class="filter-option" data-filter="lifestyle">Lifestyle</button>
+          <button class="filter-option" data-filter="superpowers">Superpowers</button>
+          <button class="filter-option" data-filter="ethical">Ethical</button>
+          <button class="filter-option" data-filter="fun">Fun & Silly</button>
+        </div>
+        <button class="close-modal" id="closeFilterModal">Close</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
